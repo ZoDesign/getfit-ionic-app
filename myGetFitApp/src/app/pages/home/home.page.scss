@@ -1,0 +1,159 @@
+/* Header toolbar */
+.toolbar-black {
+  --background: #000;
+  --color: #fff;
+  border-bottom: 1px solid #222;
+}
+
+/* Page background */
+.white-bg {
+  --ion-background-color: #fff;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Wrapper for all content */
+.main-container {
+  padding: 20px;
+  max-width: 100%; /* Adjusted to take full width */
+  margin: 0 auto;
+  padding-top: 20px; /* Adds some space after the header */
+}
+
+/* Welcome box styling */
+.welcome-box h1 {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.brand-accent {
+  color: var(--ion-color-primary);
+}
+
+.user-greeting {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Add padding to the top of ion-content to make space for the header */
+ion-content {
+  padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Default card reset (you can keep or remove) */
+ion-card {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Makes the card take up the full width of its container */
+  max-width: 80%; /* Ensures the card doesn't shrink */
+  box-sizing: border-box; /* Prevents overflow */
+}
+
+/* Dark-themed cards */
+ion-card.dark-card {
+  background: #000;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Full width of container */
+}
+
+/* Ensure equal height */
+.equal-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card titles */
+ion-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon in title */
+.card-icon {
+  font-size: 22px;
+  color: var(--ion-color-primary);
+}
+
+/* Card content paragraphs */
+ion-card-content p {
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+/* Progress stats block */
+.progress-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Buttons inside cards */
+ion-button.black-button {
+  --background: #000;
+  --color: #fff;
+  --background-hover: #111;
+  font-weight: 600;
+  --border-radius: 10px;
+  border: 1px solid #333;
+}
+
+/*  button tweaks */
+ion-button {
+  margin-top: 16px;
+  --border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Header user icon styling */
+.header-user-icon {
+  margin-left: 16px;
+  color: white;
+}
+
+/* Add space between cards and the welcome box */
+.welcome-box {
+  margin-bottom: 20px; /* Adds space between the welcome box and the content below */
+}
+
+/* Adjusting padding for buttons inside cards */
+ion-button {
+  margin-top: 16px;
+  --border-radius: 8px;
+  font-weight: 500;
+}

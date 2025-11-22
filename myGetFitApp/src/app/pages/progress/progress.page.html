@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" color="light" style="font-size: 28px;">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Fitness Progress</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="showResetPrompt()" *ngIf="workoutsCompleted > 0">
+        <ion-icon name="refresh-circle-outline" slot="icon-only" class="icon-refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="signOut()">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="custom-content">
+  <div class="progress-container">
+    <ion-card class="custom-card">
+      <ion-card-header>
+        <ion-card-title class="card-title">Your Achievements</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="achievement-stats">
+          <div class="stat-block">
+            <div class="stat-number">{{ workoutsCompleted }}</div>
+            <div class="stat-description">Total Workouts</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="workout-history">
+    <h2 class="section-heading">Workout History</h2>
+
+    <ion-list *ngIf="workoutHistory.length > 0">
+      <ion-item *ngFor="let entry of workoutHistory" class="custom-item">
+        <ion-thumbnail slot="start">
+          <img [src]="entry.programDetails.coverImage" alt="{{ entry.programDetails.title }}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3 class="item-title">{{ entry.programDetails.title }}</h3>
+          <p class="item-category">{{ entry.programDetails.category }}</p>
+          <p class="item-date">{{ entry.trackingData.completionTime | date:'MMM d, y' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="empty-state" *ngIf="workoutHistory.length === 0">
+      <ion-icon name="barbell-outline" size="large" class="empty-icon"></ion-icon>
+      <p class="empty-text">No completed workouts found.</p>
+      <ion-button routerLink="/workout-list" class="custom-button">Find Workouts</ion-button>
+    </div>
+
+    <div class="ion-padding ion-text-center">
+      <ion-button color="medium" class="reset-button" (click)="showResetPrompt()">Reset Progress</ion-button>
+    </div>
+  </div>
+</ion-content>

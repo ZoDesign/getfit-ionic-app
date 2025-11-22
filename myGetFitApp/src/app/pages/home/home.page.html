@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar class="toolbar-black">
+    <ion-buttons slot="start">
+      <ion-icon name="person-circle-outline" style="font-size: 48px;" class="header-user-icon">  </ion-icon>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="signOut()">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="white-bg">
+  <div class="main-container">
+
+    <!-- Welcome Box -->
+    <div class="welcome-box">
+      <h1>
+        Welcome to <span class="brand-accent">GetFit</span>!
+      </h1>
+      <p *ngIf="userData" class="user-greeting">
+        Hello, {{ userData.displayName }}!
+      </p>
+    </div>
+
+    <ion-grid>
+  <ion-row>
+    <!-- Workouts Card -->
+    <ion-col size="12" size-md="4">
+      <ion-card class="dark-card equal-card">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="barbell-outline" class="card-icon"></ion-icon>
+            Workout Programs
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Explore a range of workout programs tailored to support all fitness levels, from beginners to advanced athletes.</p>
+          <ion-button expand="block" class="black-button" (click)="goToWorkouts()">
+            <ion-icon name="fitness-outline" slot="start"></ion-icon>
+            Explore Workouts
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Progress Card -->
+    <ion-col size="12" size-md="4">
+      <ion-card class="dark-card equal-card">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="trending-up-outline" class="card-icon"></ion-icon>
+            Progress Tracker
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="progress-stats">
+            <div class="stat-item">
+              <span class="stat-number">{{ finishedWorkouts }}</span>
+              <span class="stat-label">Completed Workouts</span>
+            </div>
+          </div>
+          <ion-button expand="block" class="black-button" (click)="goToProgress()">
+            View Progress
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Motivation Card -->
+    <ion-col size="12" size-md="4">
+      <ion-card class="dark-card equal-card">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="nutrition-outline" class="card-icon"></ion-icon>
+            Daily Motivation
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Get inspired with a new motivational quote every day.</p>
+          <ion-button expand="block" class="black-button" (click)="goToQoutes()" >
+            View Quotes
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

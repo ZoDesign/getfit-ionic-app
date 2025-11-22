@@ -1,0 +1,139 @@
+/* Apply a dark background to the entire content */
+ion-content {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Filter container styling */
+.filter-container {
+  padding: 16px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+
+.workout-grid {
+  padding: 16px;
+  color: black;
+  background-color: #000;
+}
+
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --border-radius: 8px;
+  margin-bottom: 16px; /* Space between cards */
+  background-color: #000; 
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+ion-item:not(:last-child) {
+  margin-bottom: 16px; 
+  background-color: #000; 
+}
+
+
+ion-thumbnail {
+  --size: 80px;
+  --border-radius: 8px;
+  margin: 12px;
+}
+
+ion-thumbnail img {
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Styling for ion-label */
+ion-label {
+  padding: 12px 12px 12px 0;
+}
+
+ion-label h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ion-color-dark);
+}
+
+ion-label p:first-of-type {
+  color: var(--ion-color-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+ion-label p:last-of-type {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Empty state styling */
+.empty-state {
+  height: auto; /* Dynamically adjust the height */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+}
+
+.empty-state ion-icon {
+  font-size: 64px;
+  color: var(--ion-color-medium);
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  color: var(--ion-color-medium);
+  font-size: 16px;
+}
+
+
+ion-segment {
+  --background: #000;
+  --color: white;
+}
+
+ion-segment-button {
+  --background: #000;
+  --color: #fff;
+  --border-radius: 4px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+
+.compact-list {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+  background-color: black;
+}
+
+.compact-list ion-item {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.toolbar-black {
+  --background: #000;
+  --color: #fff;
+  border-bottom: 1px solid #222;
+}
+
+

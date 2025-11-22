@@ -1,0 +1,100 @@
+.custom-toolbar {
+  --background: #000;
+  --color: #fff;
+  font-weight: 500;
+}
+
+.custom-back-btn {
+  color: #fff;
+}
+
+.icon-refresh {
+  color: #fff;
+}
+
+.custom-content {
+  --background: #f5f5f5;
+  padding: 1rem;
+}
+
+.custom-card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.achievement-stats {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.stat-block {
+  padding: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.stat-description {
+  color: #666;
+}
+
+.section-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.custom-item {
+  --background: #fff;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.item-title {
+  font-size: 1rem;
+  color: #000;
+}
+
+.item-category,
+.item-date {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.empty-icon {
+  color: #999;
+}
+
+.empty-text {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.custom-button,
+.reset-button {
+  --background: #000;
+  --color: #fff;
+  border-radius: 8px;
+}

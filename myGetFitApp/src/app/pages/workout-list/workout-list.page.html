@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="toolbar-black">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" color="light" style="font-size: 28px;">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Workout Programs</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="signOut()">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="filter-container">
+    <ion-segment (ionChange)="handleTypeChange($event)" value="All">
+      <ion-segment-button value="All">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button *ngFor="let type of availableTypes" [value]="type">
+        <ion-label>{{ type }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="workout-grid">
+    <ion-list class="compact-list" lines="none">
+      <ion-item *ngFor="let workout of displayedWorkouts" [routerLink]="['/workout-detail', workout.uid]" detail="true">
+        <ion-thumbnail slot="start">
+          <img [src]="workout.coverImage" alt="{{ workout.title }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ workout.title }}</h2>
+          <p>{{ workout.category }} | {{ workout.timeFrame }} min | {{ workout.intensityLevel }}</p>
+          <p>{{ workout.summary }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  
+  <div class="empty-state" *ngIf="displayedWorkouts.length === 0">
+    <ion-icon name="fitness-outline" size="large"></ion-icon>
+    <p>No workouts found in this category</p>
+  </div>
+</ion-content>

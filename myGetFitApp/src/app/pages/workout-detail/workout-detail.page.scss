@@ -1,0 +1,87 @@
+.toolbar-black {
+  --background: #000;
+  --color: #fff ;
+}
+
+.list-md {
+  color: #000 !important;
+}
+
+.custom-dark-content {
+  --background: white;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100%;
+}
+
+.centered-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  
+}
+
+.bordered-box {
+  border: 2px solid #007BFF; /* blue accent */
+  border-radius: 12px;
+  background-color: black;
+  padding: 2rem;
+}
+
+.headline {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.summary {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-muted {
+  color: #aaa;
+}
+
+.custom-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.custom-equipment-list ion-item {
+  background: #1c1c1c;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.custom-toolbar-dark {
+  --background: #000;
+  color: #fff;
+}
+
+.custom-back-btn-light {
+  color: #fff;
+}
+
+ion-list,
+ion-list.list-md,
+ion-item {
+  --background: #000; /* set list background to match page */
+  background: #000 !important; /* fallback for shadow DOM */
+}
+
+ion-item::part(native) {
+  background: #000 !important; /* target the shadow part */
+  color: #fff;
+}

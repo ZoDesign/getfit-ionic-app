@@ -1,0 +1,147 @@
+.auth-content {
+  --background: #000;
+  position: relative;
+  height: 100%;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.brand-section {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 24px;
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .brand-logo {
+      font-size: 64px;
+      margin-right: 12px;
+      color: #fff;
+      filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.2));
+    }
+
+    .brand-name {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.form-section {
+  background-color: #111;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 4px 16px;
+  transition: all 0.2s ease;
+  border: 1px solid #444;
+
+  &:focus-within {
+    background-color: #333;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .input-icon {
+    font-size: 20px;
+    color: #aaa;
+    margin-right: 12px;
+  }
+
+  .auth-input {
+    --background: transparent;
+    --padding-start: 0;
+    font-size: 16px;
+    --color: #fff;
+    width: 100%;
+  }
+}
+
+.error-hint {
+  padding-left: 36px;
+  margin-bottom: 16px;
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
+.form-actions {
+  margin-top: 32px;
+
+  ion-button {
+    margin-bottom: 20px;
+    --background: #fff;
+    --color: #000;
+    --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .signup-link {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+
+    a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  ion-spinner {
+    --color: #fff;
+    transform: scale(1.5);
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 500;
+    color: #fff;
+  }
+}

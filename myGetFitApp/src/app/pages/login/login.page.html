@@ -1,0 +1,60 @@
+<ion-content class="auth-content">
+  <div class="auth-container">
+    <div class="brand-section">
+      <div class="logo-container">
+        <ion-icon name="fitness" class="brand-logo"></ion-icon>
+        <h1 class="brand-name">Welcome to the GetFit App</h1>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h2 class="form-title">Sign In</h2>
+      
+      <form [formGroup]="accessForm" (ngSubmit)="handleLogin()">
+        <div class="input-group" [class.error]="email?.invalid && (email?.dirty || email?.touched || formSubmitted)">
+          <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+          <ion-input 
+            id="email-field"
+            name="emailAddress"
+            autocomplete="email"
+            type="email"
+            formControlName="emailAddress"
+            placeholder="Email Address"
+            class="auth-input"
+          ></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="email?.invalid && (email?.dirty || email?.touched || formSubmitted)">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          {{ getErrorMessage('emailAddress') }}
+        </div>
+        
+        <div class="input-group" [class.error]="password?.invalid && (password?.dirty || password?.touched || formSubmitted)">
+          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+          <ion-input
+            id="password-field"
+            name="credentials"
+            type="password"
+            formControlName="credentials"
+            placeholder="Password"
+            class="auth-input"
+          ></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="password?.invalid && (password?.dirty || password?.touched || formSubmitted)">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          {{ getErrorMessage('credentials') }}
+        </div>
+        
+        <div class="form-actions">
+          <ion-button expand="block" type="submit" [disabled]="isLoading">
+            <ion-spinner name="crescent" *ngIf="isLoading"></ion-spinner>
+            <span *ngIf="!isLoading">Sign In</span>
+          </ion-button>
+          
+          <p class="signup-link">
+            Don't have an account? <a (click)="navigateToRegistration()">Create One</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

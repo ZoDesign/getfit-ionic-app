@@ -1,0 +1,52 @@
+<ion-content class="auth-content">
+  <div class="auth-container">
+    <div class="brand-section">
+      <div class="logo-container">
+        
+        </div>
+    </div>
+
+    <div class="form-section">
+      <form [formGroup]="registrationForm" (ngSubmit)="submitRegistration()">
+        <h2 class="form-title">Register Now</h2>
+
+        <div class="input-group">
+          <ion-icon name="person-outline" class="input-icon"></ion-icon>
+          <ion-input class="auth-input" type="text" formControlName="name" placeholder="Full Name"></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+          Please enter your name
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+          <ion-input class="auth-input" type="email" formControlName="email" placeholder="Email Address"></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+          Please enter a valid email address
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+          <ion-input class="auth-input" type="password" formControlName="password" placeholder="Create Password"></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+          Password must be at least 6 characters long
+        </div>
+
+        <div class="input-group">
+          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+          <ion-input class="auth-input" type="password" formControlName="passwordConfirm" placeholder="Verify Password"></ion-input>
+        </div>
+        <div class="error-hint" *ngIf="registrationForm.get('passwordConfirm')?.errors?.['passwordMismatch'] && registrationForm.get('passwordConfirm')?.touched">
+          Passwords don't match
+        </div>
+
+        <div class="form-actions">
+          <ion-button expand="block" type="submit" [disabled]="registrationForm.invalid">Create Account</ion-button>
+          <p class="signup-link">Already registered? <a (click)="navigateToLogin()">Sign In</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

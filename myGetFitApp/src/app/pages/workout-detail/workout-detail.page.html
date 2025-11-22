@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar class="toolbar-black">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/workout-list" class="custom-back-btn-light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-white">{{ workoutData?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="workoutData" class="ion-padding custom-dark-content">
+  <div class="centered-container bordered-box">
+
+    <div class="workout-details">
+      <h1 class="headline">{{ workoutData.title }}</h1>
+      <p class="summary">{{ workoutData.summary }}</p>
+
+      <div class="workout-stats">
+        <ion-chip color="primary">
+          <ion-icon name="hourglass-outline"></ion-icon>
+          <ion-label>{{ workoutData.timeFrame }} min</ion-label>
+        </ion-chip>
+
+        <ion-chip color="primary">
+          <ion-icon name="fitness-outline"></ion-icon>
+          <ion-label>{{ workoutData.category }}</ion-label>
+        </ion-chip>
+
+        <ion-chip color="primary">
+          <ion-icon name="speedometer-outline"></ion-icon>
+          <ion-label>{{ workoutData.intensityLevel }}</ion-label>
+        </ion-chip>
+      </div>
+
+      <h3 class="text-white">Required Equipment</h3>
+      <ion-list lines="none" class="custom-equipment-list">
+        <ion-item *ngFor="let equipment of workoutData.gear" color="dark">
+          <ion-icon name="checkmark-circle-outline" slot="start" color="primary"></ion-icon>
+          <ion-label class="text-white">{{ equipment }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="exercise-list">
+      <h2 class="text-white">Workout Plan</h2>
+
+      <ion-card *ngFor="let exercise of workoutData.activityElements; let i = index" color="dark" class="custom-card">
+        <ion-card-header>
+          <ion-card-subtitle class="text-muted">Step {{ i + 1 }}</ion-card-subtitle>
+          <ion-card-title class="text-white">{{ exercise.title }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div class="exercise-parameters text-white">
+            <div *ngIf="exercise.groupCount">
+              <strong>Sets:</strong> {{ exercise.groupCount }}
+            </div>
+            <div *ngIf="exercise.repetitions">
+              <strong>Reps:</strong> {{ exercise.repetitions }}
+            </div>
+            <div *ngIf="exercise.timeFrame">
+              <strong>Time:</strong> {{ exercise.timeFrame }} seconds
+            </div>
+          </div>
+          <p class="text-muted">{{ exercise.steps }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="workout-actions">
+      <ion-button expand="block" color="primary" (click)="completeWorkout()" [disabled]="workoutCompleted" *ngIf="!workoutCompleted">
+        <ion-icon name="trophy-outline" slot="start"></ion-icon>
+        Complete This Workout
+      </ion-button>
+
+      <ion-button expand="block" color="success" disabled *ngIf="workoutCompleted">
+        <ion-icon name="trophy" slot="start"></ion-icon>
+        Workout Completed
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
