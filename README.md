@@ -1,9 +1,10 @@
 # getfit-ionic-app
 GetFit – Ionic Fitness App
 
-GetFit is a mobile application developed using Ionic, Angular, and TypeScript for a small health and wellness 
-business that provides personalised fitness plans. The app allows users to sign up or log in, browse workout 
-programs, view workout details, and track their progress. All data is stored locally using local storage.
+GetFit is a mobile fitness tracking application built with Ionic, Angular, and TypeScript. Designed for a small health and wellness business, the app enables users to create an account, browse personalised workout programmes, view exercise details, and track their fitness progress over time. User data is stored locally using local storage, providing a lightweight and responsive experience.
+
+# Motivation for project
+Staying consistent with a fitness routine can be challenging without a simple way to track progress. GetFit was developed to help users manage their workouts by allowing them to browse exercises, record completed workouts, monitor their progress, and reset their workout history when starting a new fitness cycle. The project showcases my ability to design and develop intuitive, user-focused mobile applications.
 
 ------------------------------------------------------------
 ## 1. FEATURES
